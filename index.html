@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Gerador de curriculo</title>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" placeholder="nome" id="nome">
+        <input type="text" placeholder="email" id="cargo">
+        <button id="gerarPdf" type="submit">Generate pdf</button>
+    </form>
+
+    <div class="content" style="display: none;">
+        <div class="container">
+            <h1 class="container__titulo">Dimi Endrix Martins Miranda</h1>
+            <h3 class="container__cargo">Auxiliar Administrativo</h3>
+            <div class="foto">
+                <img src="./assets/imgs/rosto.jpg" alt="">
+            </div>
+            <div class="container__perfil">
+                <h2>Perfil</h2>
+                <div>
+                    <span>Telefone</span>
+                    <span>(43) 9 88252886</span>
+                </div>
+                <div>
+                    <span>Email</span>
+                    <span>dimiendrixmmiranda@gmail.com</span>
+                </div>
+                <div>
+                    <span>Linkedin</span>
+                    <span>https://www.linkedin.com/in/dimi-martins-595690271/</span>
+                </div>
+            </div>
+            <div class="container__software">
+                <h2>Software</h2>
+                <ul>
+                    <li>Photoshop</li>
+                    <li>Ilustrator</li>
+                    <li>Pacote Office</li>
+                    <li>JavaScritp</li>
+                </ul>
+            </div>
+            <div class="container__idiomas">
+                <h2>Idiomas</h2>
+                <ul>
+                    <li>Inglês intermediario</li>
+                    <li>Espanhol Básico</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
