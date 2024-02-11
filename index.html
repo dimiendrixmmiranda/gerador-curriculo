@@ -9,6 +9,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="./script.js" defer></script>
     <script src="./linkedin.js" defer></script>
+    <script src="./software.js" defer></script>
+    <script src="./idioma.js" defer></script>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Gerador de curriculo</title>
 </head>
@@ -39,27 +41,20 @@
         <fieldset class="formulario__container software">
             <label for="software">Softwares do seu conhecimento:</label>
             <input type="text" name="software" id="software">
-            <ul>
-                <li>Pacote Office</li>
-                <li>Pacote Office</li>
-                <li>Pacote Office</li>
-                <li>Pacote Office</li>
-            </ul>
+            <button id="enviarSoftware" type="button">Enviar</button>
+            <ul class="formulario__container__software__lista"></ul>
         </fieldset>
         <fieldset class="formulario__container idiomas">
-            <label for="idiomas">Softwares do seu conhecimento:</label>
+            <label for="idiomas">Idiomas</label>
             <input type="text" name="idiomas" id="idiomas">
-            <ul>
-                <li>Frencês</li>
-                <li>Ingles</li>
-                <li>Espanhol</li>
-                <li>Italiano</li>
-            </ul>
+            <input type="range" name="nivelIdioma" id="nivelIdioma">
+            <button id="enviarIdioma" type="button">Enviar</button>
+            <ul class="formulario__container__idiomas__lista"></ul>
         </fieldset>
         <button id="gerarPdf" type="submit">Generate pdf</button>
     </form>
 
-    <div class="content" style="display: none;">
+    <div class="content" >
         <div class="container">
             <h1 class="container__titulo">Dimi Endrix Martins Miranda</h1>
             <h3 class="container__cargo">Auxiliar Administrativo</h3>
@@ -70,15 +65,15 @@
                 <h2>Perfil</h2>
                 <div>
                     <span>Telefone:</span>
-                    <span>(43) 9 88252886</span>
+                    <span id="containerPerfilTelefone">(43) 9 88252886</span>
                 </div>
                 <div>
                     <span>Email:</span>
-                    <span>dimiendrixmmiranda@gmail.com</span>
+                    <span id="containerPerfilEmail">dimiendrixmmiranda@gmail.com</span>
                 </div>
                 <div>
                     <span>Linkedin</span>
-                    <span>https://www.linkedin.com/in/dimi-martins-595690271/</span>
+                    <span id="containerPerfilLinkedin">https://www.linkedin.com/in/dimi-martins-595690271/</span>
                 </div>
             </div>
             <div class="container__software">
@@ -93,8 +88,12 @@
             <div class="container__idiomas">
                 <h2>Idiomas</h2>
                 <ul>
-                    <li>Inglês intermediario</li>
-                    <li>Espanhol Básico</li>
+                    <li>
+                        <span>Inglês intermediario</span>
+                        <div>
+                            <div></div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

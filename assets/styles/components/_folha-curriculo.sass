@@ -26,9 +26,9 @@
         .container__titulo
             text-align: center
             line-height: 1
-            font-size: 1.6em
+            font-size: 1.27em
         .container__cargo
-            font-size: 1.1em
+            font-size: .92em
             font-weight: 600
             margin: .5em 0
         .foto
@@ -46,6 +46,8 @@
             flex-direction: column
             word-break: break-all
             margin: 1.5em 0
+            h2
+                font-size: 1.3em
             div
                 display: flex
                 flex-direction: column
@@ -53,10 +55,17 @@
                     margin-bottom: .5em
                 &:last-child
                     margin-bottom: 0
+                span
+                    &:first-child
+                        font-size: .9em
+                    &:last-child
+                        font-size: 1em
         .container__software
             width: 100%
             display: flex
             flex-direction: column
+            h2
+                font-size: 1.3em
             ul
                 list-style: none
                 li
@@ -67,11 +76,25 @@
             display: flex
             flex-direction: column
             margin-top: 1em
+            h3
+                font-size: 1.3em
             ul
                 list-style: none
                 li
                     margin: .3em 0
                     font-size: 1.1em
+                    display: flex
+                    flex-direction: column
+                    row-gap: .5em
+                    div
+                        width: 100%
+                        height: 20px
+                        background-color: white
+                        div
+                            height: 100%
+                            width: 40%
+                            background-color: green
+                            scale: 1.05
         .container__experiencia
             display: flex
             flex-direction: column
