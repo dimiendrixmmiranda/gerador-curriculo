@@ -1,0 +1,52 @@
+@import '../abstract/_variaveis'
+.formulario
+    display: flex
+    flex-direction: column
+    font-family: $fonte-formulario
+    width: 90%
+    margin: 0 auto
+    color: white
+    row-gap: .5em
+    .formulario__container
+        display: flex
+        flex-direction: column
+        position: relative
+        border: 0
+        input
+            height: 25px
+            border-radius: 5px
+        label
+            font-size: .9em
+            margin-bottom: .2em
+    .linkedin
+        display: grid
+        grid-row: 25px
+        gap: .5em
+        input[type='text']
+            display: none
+            grid-row: 2/3
+            grid-column: 1/3
+            width: 100%
+        input[type='checkbox']
+            grid-row: 1/2
+        label
+            margin: 0
+            grid-row: 1/2
+            max-width: 180px
+            align-self: center
+    .software
+        ul
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            list-style: none
+            gap: .5em 1em
+            li
+                font-size: .8em
+    .idiomas
+        ul
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            list-style: none
+            gap: .5em 1em
+            li
+                font-size: .8em
