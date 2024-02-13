@@ -17,7 +17,7 @@ body {
 
 .content {
   width: 100%;
-  height: 100%;
+  height: 1120px;
   background-color: red;
   font-family: "Poppins", sans-serif;
   color: white;
@@ -126,12 +126,11 @@ body {
 }
 .content .container .container__idiomas ul li div {
   width: 100%;
-  height: 20px;
+  height: 10px;
   background-color: white;
 }
 .content .container .container__idiomas ul li div div {
   height: 100%;
-  width: 40%;
   background-color: green;
   scale: 1.05;
 }
@@ -221,6 +220,7 @@ body {
   margin: 0 auto;
   color: white;
   row-gap: 0.5em;
+  margin-top: 1em;
 }
 .formulario .formulario__container {
   display: flex;
@@ -317,4 +317,34 @@ body {
 .formulario .idiomas ul li {
   font-size: 1em;
   text-align: center;
+  display: flex;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+}
+.formulario .uploadFoto {
+  margin: 0 auto;
+}
+.formulario .uploadFoto .picture {
+  width: 200px;
+  height: 200px;
+  background-color: #ddd;
+  display: block;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: dashed 2px;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out, outline 300ms ease-in-out;
+  outline: 2px solid #fff;
+  overflow: hidden;
+  position: relative;
+}
+.formulario .uploadFoto .picture .picture__input {
+  display: none;
+}
+.formulario .uploadFoto .picture .picture__image .picture__image__img {
+  max-width: 100%;
 }/*# sourceMappingURL=style.css.map */

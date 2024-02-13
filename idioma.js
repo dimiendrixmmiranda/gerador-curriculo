@@ -1,27 +1,21 @@
 const btnEnviarIdioma = document.querySelector('#enviarIdioma')
-const listaDeIdiomas = document.querySelector('.formulario__container__idiomas__lista')
 
-btnEnviarIdioma.addEventListener('click', () => {
-    const inputIdiomaTexto = btnEnviarIdioma.parentElement.querySelector('#idiomas').value
-    const inputIdiomaNivel = btnEnviarIdioma.parentElement.querySelector('#nivelIdioma').value
-    const inputIdioma = {
-        nomeIdioma: inputIdiomaTexto,
-        nivelIdioma: inputIdiomaNivel,
-    }
+btnEnviarIdioma.addEventListener('click', (e) => {
+    const listaDeIdiomas = document.querySelector('.formulario__container__idiomas__lista')
+    const inputIdioma = e.target.parentElement.querySelector('#idiomas')
+    const inputIdiomaNivel = e.target.parentElement.querySelector('#nivelIdioma')
+    const objetoIdioma = {idioma: inputIdioma.value, nivelIdioma: inputIdiomaNivel.value}
 
-    criarItemSoftware(inputIdioma)
-})
-
-function criarItemSoftware(inputIdioma){
     const li = document.createElement('li')
-    li.classList.add('formulario__container__idiomas__lista__item')
-    const nomeIdioma = document.createElement('span')
-    nomeIdioma.innerHTML = inputIdioma.nomeIdioma
-    nomeIdioma.id = 'nomeIdioma'
-    const nivelIdioma = document.createElement('span')
-    nivelIdioma.innerHTML = inputIdioma.nivelIdioma
-    nivelIdioma.id = 'nivelIdioma'
-    li.appendChild(nomeIdioma)
-    li.appendChild(nivelIdioma)
+    const spanIdioma = document.createElement('span')
+    spanIdioma.innerHTML = objetoIdioma.idioma
+    spanIdioma.classList.add('span__idioma')
+    
+    const spanIdiomaNivel = document.createElement('span')
+    spanIdiomaNivel.innerHTML = objetoIdioma.nivelIdioma 
+    spanIdiomaNivel.classList.add('span__idioma__nivel')
+    
+    li.appendChild(spanIdioma)
+    li.appendChild(spanIdiomaNivel)
     listaDeIdiomas.appendChild(li)
-}
+})

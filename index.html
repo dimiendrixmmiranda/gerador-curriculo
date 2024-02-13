@@ -11,6 +11,7 @@
     <script src="./linkedin.js" defer></script>
     <script src="./software.js" defer></script>
     <script src="./idioma.js" defer></script>
+    <script src="./inputFoto.js" defer></script>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Gerador de curriculo</title>
 </head>
@@ -33,6 +34,13 @@
             <label for="email">Email:</label>
             <input type="email" id="email">
         </fieldset>
+        <fieldset class="uploadFoto">
+            <label class="picture" for="picture" tabindex="0">
+                <input type="file" accept="image/*" class="picture__input" id="picture">
+                <span class="picture__image">Selecione a Imagem</span>
+            </label>
+        </fieldset>
+
         <fieldset class="formulario__container linkedin">
             <label for="linkedin">Inserir link do Linkedin?</label>
             <input type="checkbox" id="linkedin">
@@ -54,7 +62,7 @@
         <button id="gerarPdf" type="submit">Generate pdf</button>
     </form>
 
-    <div class="content" >
+    <div class="content" style="display: none;">
         <div class="container">
             <h1 class="container__titulo">Dimi Endrix Martins Miranda</h1>
             <h3 class="container__cargo">Auxiliar Administrativo</h3>
@@ -78,23 +86,11 @@
             </div>
             <div class="container__software">
                 <h2>Software</h2>
-                <ul>
-                    <li>Photoshop</li>
-                    <li>Ilustrator</li>
-                    <li>Pacote Office</li>
-                    <li>JavaScritp</li>
-                </ul>
+                <ul></ul>
             </div>
             <div class="container__idiomas">
                 <h2>Idiomas</h2>
-                <ul>
-                    <li>
-                        <span>Inglês intermediario</span>
-                        <div>
-                            <div></div>
-                        </div>
-                    </li>
-                </ul>
+                <ul></ul>
             </div>
         </div>
         <div class="container">
