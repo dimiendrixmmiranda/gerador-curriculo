@@ -17,7 +17,8 @@ form.addEventListener('submit', (e) => {
         enderecoInputFoto: '',
         linkedin: '',
         arraySoftwares: [],
-        arrayIdiomas: []
+        arrayIdiomas: [],
+        descricao: e.target['descricao'].value
     }
 
     // lógica no input de foto
@@ -81,10 +82,12 @@ form.addEventListener('submit', (e) => {
         console.log(lista)
     })
 
+    divConteudo.querySelector('.container__descricao p').innerHTML = dados.descricao
+
     const options = {
         filename: "Arquivo123",
         html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     }
     html2pdf().set(options).from(divConteudo).save()
 })
