@@ -12,6 +12,7 @@
     <script src="./software.js" defer></script>
     <script src="./idioma.js" defer></script>
     <script src="./inputFoto.js" defer></script>
+    <script src="./experiencia.js" defer></script>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Gerador de curriculo</title>
 </head>
@@ -66,6 +67,7 @@
         </fieldset>
 
         <fieldset class="formulario__container experiencia">
+            <h2>Experiência</h2>
             <label for="experiencia__cargo">Cargo</label>
             <input type="text" name="" id="experiencia__cargo">
             <label for="nome__empresa">Nome da Empresa</label>
@@ -74,12 +76,15 @@
             <input type="text" name="" id="experiencia__periodo">
             <label for="experiencia__descricao">Descricao</label>
             <textarea name="experiencia__descricao" id="experiencia__descricao" cols="30" rows="10"></textarea>
-            <button type="button">Enviar</button>
+            <button type="button" id="enviarExperiencia">Enviar</button>
 
-            <ul>Lista de Experiências colocadas</ul>
+            <ul class="lista__experiencia">
+                <h2 class="lista__experiencia__titulo">Lista de Experiências colocadas</h2>
+            </ul>
         </fieldset>
 
         <fieldset class="formulario__container educacao">
+            <h2>Educacao</h2>
             <label for="educacao__curso">curso</label>
             <input type="text" name="" id="educacao__curso">
             <label for="educacao__instituicao">Instituição</label>
