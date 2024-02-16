@@ -17,13 +17,14 @@ body {
 
 .content {
   width: 100%;
-  height: 2070px;
-  margin-top: -950px;
   background-color: red;
   font-family: "Poppins", sans-serif;
   color: white;
   display: grid;
   grid-template-columns: 35% 1fr;
+  width: 780px;
+  height: 1950px;
+  margin-top: -830px;
 }
 .content .container {
   padding: 20px 40px;
@@ -34,6 +35,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 .content .container:last-child {
   grid-column: 2/3;
@@ -42,6 +45,8 @@ body {
   align-items: center;
   background-color: #EEEDEB;
   color: black;
+  height: 100%;
+  width: 100%;
 }
 .content .container .container__titulo {
   text-align: center;

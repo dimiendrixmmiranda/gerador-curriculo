@@ -1,22 +1,24 @@
 @import '../abstract/_variaveis'
 .content
     width: 100%
-    height: 2070px
-    margin-top: -950px
     background-color: red
     font-family: $fonte-principal
     color: white
     display: grid
     grid-template-columns: 35% 1fr
+    width: 780px
+    height: 1950px
+    margin-top: -830px
     .container
         padding: 20px 40px
-        // height: 1120px
         &:first-child
             background-color: $azul-escuro
             grid-column: 1/2
             display: flex
             flex-direction: column
             align-items: center
+            height: 100%
+            width: 100%
         &:last-child
             grid-column: 2/3
             display: flex
@@ -24,6 +26,8 @@
             align-items: center
             background-color: $cinza
             color: black
+            height: 100%
+            width: 100%
         .container__titulo
             text-align: center
             line-height: 1
