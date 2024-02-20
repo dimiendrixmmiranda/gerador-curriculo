@@ -4,36 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    <script src="./script.js" defer></script>
-    <script src="./linkedin.js" defer></script>
-    <script src="./software.js" defer></script>
-    <script src="./idioma.js" defer></script>
-    <script src="./inputFoto.js" defer></script>
-    <script src="./experiencia.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Gerador de curriculo</title>
 </head>
 
 <body>
+    <header>
+        <img src="./assets/imgs/formulario.png" alt="">
+        <h1>Gerador de Currículo</h1>
+        <button><i class="fa-solid fa-bars"></i></button>
+    </header>
+
+    <div class="banner">
+        <img src="./assets/imgs/image.svg" alt="">
+        <h2>Transforme suas habilidades em oportunidades. <span>Crie seu currículo de destaque com facilidade e
+                rapidez.</span></h2>
+    </div>
+
     <form action="" class="formulario">
+        <h2>Preencha o Formulário:</h2>
         <fieldset class="formulario__container">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome">
+            <input type="text" placeholder="" id="nome" required="">
+            <label for="nome">
+                <span style="--i: 0">N</span>
+                <span style="--i: 1">o</span>
+                <span style="--i: 2">m</span>
+                <span style="--i: 3">e</span>
+                <span style="--i: 4">:</span>
+            </label>
+            <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
         <fieldset class="formulario__container">
-            <label for="cargo">Cargo:</label>
-            <input type="text" id="cargo">
+            <input type="text" id="cargo" placeholder="" required="">
+            <label for="cargo">
+                <span style="--i: 0">C</span>
+                <span style="--i: 1">a</span>
+                <span style="--i: 2">r</span>
+                <span style="--i: 3">g</span>
+                <span style="--i: 4">o</span>
+                <span style="--i: 5">:</span>
+            </label>
+            <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
         <fieldset class="formulario__container">
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone">
+            <input type="text" id="telefone" placeholder="" required="">
+            <label for="telefone">
+                <span style="--i: 0">T</span>
+                <span style="--i: 1">e</span>
+                <span style="--i: 2">l</span>
+                <span style="--i: 3">e</span>
+                <span style="--i: 4">f</span>
+                <span style="--i: 5">o</span>
+                <span style="--i: 6">n</span>
+                <span style="--i: 7">e</span>
+                <span style="--i: 8">:</span>
+            </label>
+            <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
         <fieldset class="formulario__container">
-            <label for="email">Email:</label>
-            <input type="email" id="email">
+            <input type="email" id="email" placeholder="" required="">
+            <label for="email">
+                <span style="--i: 0">E</span>
+                <span style="--i: 1">m</span>
+                <span style="--i: 2">a</span>
+                <span style="--i: 3">i</span>
+                <span style="--i: 4">l</span>
+                <span style="--i: 5">:</span>
+            </label>
+            <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
         <fieldset class="uploadFoto">
             <label class="picture" for="picture" tabindex="0">
@@ -42,12 +87,43 @@
             </label>
         </fieldset>
 
-        <fieldset class="formulario__container linkedin">
+        <fieldset class="formulario__container_linkedin">
             <label for="linkedin">Inserir link do Linkedin?</label>
-            <input type="checkbox" id="linkedin">
-            <input type="text" name="" id="linkedin">
+            <input type="checkbox" id="linkedin" inputCheckboxLinkedin>
+            <input type="text" name="" id="linkedin" inputTextLinkedin>
         </fieldset>
-        <fieldset class="formulario__container software">
+
+        <fieldset class="formulario__container_software">
+            <label for="software">Inserir Softwares do seu conhecimento:</label>
+            <input type="checkbox" id="software" inputCheckboxSoftware>
+            <input type="text" id="software" inputTextSoftware>
+            <button type="button">Enviar</button>
+
+            <ul class="formulario__container_software_lista" id="listaSoftware"></ul>
+        </fieldset>
+        
+        <fieldset class="formulario__container_idiomas">
+            <label for="idioma">Inserir Idiomas do seu conhecimento:</label>
+            <input type="checkbox" id="idioma" inputCheckboxIdioma>
+            <input type="text" id="idioma" inputTextIdioma>
+            <input type="range" id="idiomaNivel" inputRangeIdioma>
+            <button type="button">Enviar</button>
+
+            <ul class="formulario__container_idioma_lista" id="listaIdioma"></ul>
+        </fieldset>
+
+        <fieldset class="formulario__container_certificacoes">
+            <label for="certificacoes">Inserir Certificacoes?</label>
+            <input type="checkbox" id="certificacoes" inputCheckboxCertificacoes>
+            <input type="text" id="nomeCurso" inputNomeCursoCertificacoes>
+            <input type="text" id="cargaHoraria" inputCargaHorariaCertificacoes>
+            <input type="text" id="instituicao" inputInstituicaoCertificacoes>
+            <input type="text" id="ano" inputAnoCertificacoes>
+            <button>Enviar</button>
+        </fieldset>
+
+
+        <!-- <fieldset class="formulario__container software">
             <label for="software">Softwares do seu conhecimento:</label>
             <input type="text" name="software" id="software">
             <button id="enviarSoftware" type="button">Enviar</button>
@@ -96,12 +172,12 @@
             <button type="button">Enviar</button>
 
             <ul>Lista de Experiências colocadas</ul>
-        </fieldset>
+        </fieldset> -->
 
         <button id="gerarPdf" type="submit">Generate pdf</button>
     </form>
 
-    <div class="content" style="display: none;">
+    <div class="content">
         <div class="container">
             <h1 class="container__titulo">Dimi Endrix Martins Miranda</h1>
             <h3 class="container__cargo">Auxiliar Administrativo</h3>
@@ -118,9 +194,9 @@
                     <span>Email:</span>
                     <span id="containerPerfilEmail">dimiendrixmmiranda@gmail.com</span>
                 </div>
-                <div>
+                <div id="containerPerfilLinkedin">
                     <span>Linkedin</span>
-                    <span id="containerPerfilLinkedin">https://www.linkedin.com/in/dimi-martins-595690271/</span>
+                    <span>https://www.linkedin.com/in/dimi-martins-595690271/</span>
                 </div>
             </div>
             <div class="container__software">
@@ -184,6 +260,8 @@
             </div>
         </div>
     </div>
+
+
 </body>
 
 </html>
