@@ -30,6 +30,7 @@
 
     <form action="" class="formulario">
         <h2>Preencha o Formulário:</h2>
+        
         <fieldset class="formulario__container">
             <input type="text" placeholder="" id="nome" required="">
             <label for="nome">
@@ -41,6 +42,7 @@
             </label>
             <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
+        
         <fieldset class="formulario__container">
             <input type="text" id="cargo" placeholder="" required="">
             <label for="cargo">
@@ -53,6 +55,7 @@
             </label>
             <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
+        
         <fieldset class="formulario__container">
             <input type="text" id="telefone" placeholder="" required="">
             <label for="telefone">
@@ -68,6 +71,7 @@
             </label>
             <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
+        
         <fieldset class="formulario__container">
             <input type="email" id="email" placeholder="" required="">
             <label for="email">
@@ -80,6 +84,7 @@
             </label>
             <button type="button" class="btn-info" tabindex="1"><i class="fa-solid fa-info"></i></button>
         </fieldset>
+        
         <fieldset class="uploadFoto">
             <label class="picture" for="picture" tabindex="0">
                 <input type="file" accept="image/*" class="picture__input" id="picture">
@@ -115,64 +120,51 @@
         <fieldset class="formulario__container_certificacoes">
             <label for="certificacoes">Inserir Certificacoes?</label>
             <input type="checkbox" id="certificacoes" inputCheckboxCertificacoes>
-            <input type="text" id="nomeCurso" inputNomeCursoCertificacoes>
-            <input type="text" id="cargaHoraria" inputCargaHorariaCertificacoes>
-            <input type="text" id="instituicao" inputInstituicaoCertificacoes>
-            <input type="text" id="ano" inputAnoCertificacoes>
+            <input type="text" id="nomeCurso" inputNomeCursoCertificacoes placeholder="Nome do curso">
+            <input type="text" id="cargaHoraria" inputCargaHorariaCertificacoes placeholder="Carga Horária">
+            <input type="text" id="instituicao" inputInstituicaoCertificacoes placeholder="Instituição">
+            <input type="text" id="ano" inputAnoCertificacoes placeholder="Ano de Conclusão">
+            <ul class="lista__certificacoes"></ul>
             <button>Enviar</button>
         </fieldset>
-
-
-        <!-- <fieldset class="formulario__container software">
-            <label for="software">Softwares do seu conhecimento:</label>
-            <input type="text" name="software" id="software">
-            <button id="enviarSoftware" type="button">Enviar</button>
-            <ul class="formulario__container__software__lista"></ul>
-        </fieldset>
-        <fieldset class="formulario__container idiomas">
-            <label for="idiomas">Idiomas</label>
-            <input type="text" name="idiomas" id="idiomas">
-            <input type="range" name="nivelIdioma" id="nivelIdioma">
-            <button id="enviarIdioma" type="button">Enviar</button>
-            <ul class="formulario__container__idiomas__lista"></ul>
-        </fieldset>
-
-        <fieldset class="formulario__container descricao">
-            <label for="descricao">Descricao</label>
-            <textarea name="descricao" id="descricao" cols="30" rows="10" maxlength="260"></textarea>
+        
+        <fieldset class="formulario__container formulario__container__descricao">
+            <h3>Faça uma breve descrição sobre você</h3>
+            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="" required=""></textarea>
+            <label for="descricao">
+                <span style="--i: 0">D</span>
+                <span style="--i: 1">e</span>
+                <span style="--i: 2">s</span>
+                <span style="--i: 3">c</span>
+                <span style="--i: 4">r</span>
+                <span style="--i: 5">i</span>
+                <span style="--i: 6">ç</span>
+                <span style="--i: 7">ã</span>
+                <span style="--i: 8">o</span>
+            </label>
         </fieldset>
 
-        <fieldset class="formulario__container experiencia">
-            <h2>Experiência</h2>
-            <label for="experiencia__cargo">Cargo</label>
-            <input type="text" name="" id="experiencia__cargo">
-            <label for="nome__empresa">Nome da Empresa</label>
-            <input type="text" name="" id="nome__empresa">
-            <label for="experiencia__periodo">Periodo</label>
-            <input type="text" name="" id="experiencia__periodo">
-            <label for="experiencia__descricao">Descricao</label>
-            <textarea name="experiencia__descricao" id="experiencia__descricao" cols="30" rows="10"></textarea>
-            <button type="button" id="enviarExperiencia">Enviar</button>
+        <fieldset class="formulario__container__experiencia">
+            <h3>Informe suas experiências de trabalho:</h3>
+            <input type="text" name="cargoExperiencia" id="cargoExperiencia" placeholder="Cargo">
+            <input type="text" name="empresaExperiencia" id="empresaExperiencia" placeholder="Enpresa">
+            <input type="text" name="periodoExperiencia" id="periodoExperiencia" placeholder="Periodo">
+            <textarea name="atribuicoesExperiencia" id="atribuicoesExperiencia" cols="30" rows="10" placeholder="Atribuições e Responsabilidades"></textarea>
+            <button>Enviar</button>
 
-            <ul class="lista__experiencia">
-                <h2 class="lista__experiencia__titulo">Lista de Experiências colocadas</h2>
-            </ul>
+            <ul class="lista__experiencia__item"></ul>
         </fieldset>
 
-        <fieldset class="formulario__container educacao">
-            <h2>Educacao</h2>
-            <label for="educacao__curso">curso</label>
-            <input type="text" name="" id="educacao__curso">
-            <label for="educacao__instituicao">Instituição</label>
-            <input type="text" name="" id="educacao__instituicao">
-            <label for="educacao__periodo">Periodo</label>
-            <input type="text" name="" id="educacao__periodo">
-            <label for="educacao__aprendizados">Aprendizados</label>
-            <textarea name="educacao__aprendizados" id="educacao__aprendizados" cols="30" rows="10"></textarea>
-            <button type="button">Enviar</button>
+        <div class="formulario__container__formacao">
+            <h3>Informe seu nível educacional:</h3>
+            <input type="text" name="cursoFormacao" id="cursoFormacao" placeholder="Curso">
+            <input type="text" name="instituicaoFormacao" id="instituicaoFormacao" placeholder="Instituicao">
+            <input type="text" name="periodoFormacao" id="periodoFormacao" placeholder="Periodo">
+            <textarea name="detalhesFormacao" id="detalhesFormacao" cols="30" rows="10" placeholder="Detalhes"></textarea>
+            <button>Enviar</button>
 
-            <ul>Lista de Experiências colocadas</ul>
-        </fieldset> -->
+            <ul class="lista__formacao"></ul>
+        </div>
 
         <button id="gerarPdf" type="submit">Generate pdf</button>
     </form>
