@@ -9,11 +9,6 @@ vereficarNivelEducacional()
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-    const conteudo = document.querySelector('.content')
-    const divConteudo = document.createElement('div')
-    divConteudo.classList.add('content')
-    divConteudo.innerHTML = conteudo.innerHTML
-
     const dados = {
         nome: e.target['nome'].value,
         cargo: e.target['cargo'].value,
@@ -47,7 +42,6 @@ form.addEventListener('submit', (e) => {
 
     const listaCertificacoes = document.querySelectorAll('.lista__certificacoes li')
     listaCertificacoes.forEach(certificacao => {
-        console.log(certificacao.querySelector('.certificacao__nomeCurso'))
         const objetoCertificao = {
             nomeCurso: certificacao.querySelector('.certificacao__nomeCurso').innerHTML,
             instituicao: certificacao.querySelector('.certificacao__instituicao').innerHTML,
@@ -86,7 +80,100 @@ form.addEventListener('submit', (e) => {
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     }
-    console.log(dados)
+
+    document.querySelector('.container__titulo').innerHTML = dados.nome
+    document.querySelector('.container__cargo').innerHTML = dados.cargo
+    document.querySelector('#containerPerfilTelefone').innerHTML = dados.telefone
+    document.querySelector('#containerPerfilEmail').innerHTML = dados.email
+
+    if(dados.linkedin){
+        const elementoLinkedin = document.querySelector('#containerPerfilLinkedin')
+        const spanTitulo = document.createElement('span')
+        spanTitulo.innerHTML = 'Linkedin'
+        
+        const spanLinkLinkedin = document.createElement('span')
+        spanLinkLinkedin.innerHTML = dados.linkedin
+
+        elementoLinkedin.appendChild(spanTitulo)
+        elementoLinkedin.appendChild(spanLinkLinkedin)
+    }
+
+    if(dados.arraySoftwares.length > 0){
+        const containerSoftware = document.querySelector('.container__software')
+        const h3 = document.createElement('h3')
+        h3.innerHTML = 'Software'
+        containerSoftware.appendChild(h3)
+        const elementoListaSoftware = document.querySelector('.container__software__lista')
+        console.log(dados.arraySoftwares)
+        dados.arraySoftwares.forEach(software => {
+            const li = document.createElement('li')
+            li.innerHTML = software
+            elementoListaSoftware.appendChild(li)
+        })
+    }
+
+    if(dados.arrayIdiomas.length > 0){
+        const containerIdioma = document.querySelector('.container__idiomas')
+        const h3 = document.createElement('h3')
+        h3.innerHTML = 'Idiomas'
+        containerIdioma.appendChild(h3)
+
+        const elementoListaIdioma = document.querySelector('.container__idioma__lista')
+        dados.arrayIdiomas.forEach(idioma => {
+            const li = document.createElement('li')
+            
+            const nomeIdioma = document.createElement('p')
+            nomeIdioma.innerHTML = idioma.idioma
+
+            const divExterna = document.createElement('div')
+            const divInterna = document.createElement('div')
+            divInterna.style.width = `${idioma.valorIdioma}%`
+            divExterna.appendChild(divInterna)
+            
+            li.appendChild(nomeIdioma)
+            li.appendChild(divExterna)
+
+            elementoListaIdioma.appendChild(li)
+        })
+    }
+
+    if(dados.arrayCertificacoes.length > 0){
+        const h3 = document.createElement('h3')
+        h3.innerHTML = 'Certificações'
+
+        const elementoContainerCertificacoes = document.querySelector('.container__certificacoes')
+        elementoContainerCertificacoes.appendChild(h3)
+        
+        const ul = document.createElement('ul')
+        dados.arrayCertificacoes.forEach(certificacao => {
+            const li = document.createElement('li')
+            console.log(certificacao)
+            const spanNomeCurso = document.createElement('span')
+            spanNomeCurso.innerHTML = certificacao.nomeCurso
+
+            const spanInstituicao = document.createElement('span')
+            spanInstituicao.innerHTML = certificacao.instituicao
+
+            const spanCargaHoraria = document.createElement('span')
+            spanCargaHoraria.innerHTML = certificacao.cargaHoraria
+
+            const spanAnoConclusao = document.createElement('span')
+            spanAnoConclusao.innerHTML = certificacao.anoConclusao
+
+            li.appendChild(spanNomeCurso)
+            li.appendChild(spanInstituicao)
+            li.appendChild(spanCargaHoraria)
+            li.appendChild(spanAnoConclusao)
+            ul.appendChild(li)
+        })
+        elementoContainerCertificacoes.appendChild(ul)
+    }
+
+    const conteudo = document.querySelector('.content')
+    const divConteudo = document.createElement('div')
+    divConteudo.classList.add('content')
+    divConteudo.innerHTML = conteudo.innerHTML
+
     // html2pdf().set(options).from(divConteudo).save()
 })
 
@@ -122,7 +209,6 @@ function verificarInputSoftware() {
 
     btnEnviarSoftware.addEventListener('click', (e) => {
         e.preventDefault()
-        console.log('enviar')
         const li = document.createElement('li')
         li.innerHTML = inputTextSoftware.value
         listaSoftwares.appendChild(li)
@@ -261,7 +347,6 @@ function vereficarNivelEducacional(){
     const btnEnviarNivelEducacional = document.querySelector('.formulario__container__formacao button')
     const listaExperiencias = document.querySelector('.lista__formacao')
 
-    console.log(btnEnviarNivelEducacional)
     btnEnviarNivelEducacional.addEventListener('click', (e) => {
         e.preventDefault()
         const li = document.createElement('li')

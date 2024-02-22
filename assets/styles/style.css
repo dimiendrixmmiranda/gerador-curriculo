@@ -23,16 +23,12 @@ body {
 
 .content {
   width: 100%;
-  background-color: red;
   font-family: "Poppins", sans-serif;
   color: white;
   display: grid;
-  grid-template-columns: 35% 1fr;
+  grid-template-columns: 38% 1fr;
   width: 810px;
-  height: 2800px;
-}
-.content .container {
-  padding: 20px 40px;
+  height: 2370px;
 }
 .content .container:first-child {
   background-color: #100c4b;
@@ -42,6 +38,7 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
+  padding: 40px 20px 40px 40px;
 }
 .content .container:last-child {
   grid-column: 2/3;
@@ -52,6 +49,7 @@ body {
   color: black;
   height: 100%;
   width: 100%;
+  padding: 40px 40px 40px 20px;
 }
 .content .container .container__titulo {
   text-align: center;
@@ -70,6 +68,7 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  border-radius: 50%;
 }
 .content .container .foto img {
   height: 100%;
@@ -79,10 +78,11 @@ body {
   display: flex;
   flex-direction: column;
   word-break: break-all;
-  margin: 1.5em 0;
+  margin: 1em 0 1.5em 0;
 }
 .content .container .container__perfil h2 {
   font-size: 1.3em;
+  margin-bottom: 0.5em;
 }
 .content .container .container__perfil div {
   display: flex;
@@ -95,17 +95,17 @@ body {
   margin-bottom: 0;
 }
 .content .container .container__perfil div span:first-child {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .content .container .container__perfil div span:last-child {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .content .container .container__software {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
-.content .container .container__software h2 {
+.content .container .container__software h3 {
   font-size: 1.3em;
 }
 .content .container .container__software ul {
@@ -118,7 +118,7 @@ body {
 .content .container .container__idiomas {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-top: 1em;
 }
 .content .container .container__idiomas h3 {
@@ -126,6 +126,7 @@ body {
 }
 .content .container .container__idiomas ul {
   list-style: none;
+  overflow: hidden;
 }
 .content .container .container__idiomas ul li {
   margin: 0.3em 0;
@@ -144,11 +145,43 @@ body {
   background-color: green;
   scale: 1.05;
 }
+.content .container .container__certificacoes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+.content .container .container__certificacoes h3 {
+  font-size: 1.3em;
+}
+.content .container .container__certificacoes ul {
+  list-style-type: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+.content .container .container__certificacoes ul li {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, 20px);
+  background-color: white;
+  padding: 0.2em 0.5em;
+  font-weight: 600;
+  color: black;
+}
+.content .container .container__certificacoes ul li .lista__certificacoes_nomeCurso {
+  grid-row: 1/2;
+  grid-column: 1/3;
+}
+.content .container .container__certificacoes ul li .lista__certificacoes_instituicao {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
 .content .container .container__experiencia {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 1em;
 }
 .content .container .container__experiencia h2 {
   border: solid 2px black;
@@ -511,7 +544,43 @@ body {
 .banner {
   width: 90%;
   margin: 1.5em auto;
-  height: 88vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5em;
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner {
+    justify-content: center;
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+  }
+}
+.banner img {
+  width: 80%;
+}
+@media screen and (min-width: 500px) {
+  .banner img {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner img {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner img {
+    width: 30%;
+  }
 }
 .banner h2 {
   font-size: 1.6em;
@@ -519,6 +588,17 @@ body {
   color: white;
   text-align: center;
   font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .banner h2 {
+    max-width: 50%;
+    font-size: 1.8em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner h2 {
+    font-size: 2.4em;
+  }
 }
 .banner h2 span {
   font-weight: 700;
