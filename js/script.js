@@ -20,8 +20,8 @@ form.addEventListener('submit', (e) => {
         descricao: e.target['descricao'].value,
         arrayCertificacoes: [],
         arrayExperiencias: [],
-        arrayEducacao: []
-        // enderecoInputFoto: '',
+        arrayEducacao: [],
+        enderecoInputFoto: document.querySelector('.formulario__foto__final img').getAttribute('src')
     }
 
     const listaSoftwares = e.target.querySelectorAll('#listaSoftware li')
@@ -85,6 +85,12 @@ form.addEventListener('submit', (e) => {
     document.querySelector('.container__cargo').innerHTML = dados.cargo
     document.querySelector('#containerPerfilTelefone').innerHTML = dados.telefone
     document.querySelector('#containerPerfilEmail').innerHTML = dados.email
+    document.querySelector('.container__descricao').innerHTML = dados.descricao
+
+    const imagem = document.querySelector('.foto img')
+    document.querySelector('#foto__imagem').setAttribute('src', dados.enderecoInputFoto)
+    console.log(imagem)
+
 
     if(dados.linkedin){
         const elementoLinkedin = document.querySelector('#containerPerfilLinkedin')
@@ -96,7 +102,7 @@ form.addEventListener('submit', (e) => {
 
         elementoLinkedin.appendChild(spanTitulo)
         elementoLinkedin.appendChild(spanLinkLinkedin)
-    }
+        }
 
     if(dados.arraySoftwares.length > 0){
         const containerSoftware = document.querySelector('.container__software')
@@ -104,7 +110,6 @@ form.addEventListener('submit', (e) => {
         h3.innerHTML = 'Software'
         containerSoftware.appendChild(h3)
         const elementoListaSoftware = document.querySelector('.container__software__lista')
-        console.log(dados.arraySoftwares)
         dados.arraySoftwares.forEach(software => {
             const li = document.createElement('li')
             li.innerHTML = software
@@ -147,7 +152,6 @@ form.addEventListener('submit', (e) => {
         const ul = document.createElement('ul')
         dados.arrayCertificacoes.forEach(certificacao => {
             const li = document.createElement('li')
-            console.log(certificacao)
             const spanNomeCurso = document.createElement('span')
             spanNomeCurso.innerHTML = certificacao.nomeCurso
 

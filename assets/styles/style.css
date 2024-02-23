@@ -28,7 +28,8 @@ body {
   display: grid;
   grid-template-columns: 38% 1fr;
   width: 810px;
-  height: 2370px;
+  height: 1900px;
+  margin-left: -10px;
 }
 .content .container:first-child {
   background-color: #100c4b;
@@ -254,6 +255,9 @@ body {
   grid-column: 1/3;
   margin-left: 2em;
 }
+.content .container .container__descricao {
+  margin-bottom: 1.2em;
+}
 
 .formulario {
   display: flex;
@@ -273,32 +277,87 @@ body {
   font-size: 1.1em;
   margin-bottom: 0.7em;
 }
-.formulario .uploadFoto {
+.formulario .formulario__foto {
   margin: 0 auto;
+  width: 90%;
+  height: 250px;
+  position: relative;
+  background-color: red;
 }
-.formulario .uploadFoto .picture {
-  width: 200px;
-  height: 200px;
-  background-color: #ddd;
-  display: block;
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #aaa;
-  border: dashed 2px;
-  cursor: pointer;
-  font-family: sans-serif;
-  transition: color 300ms ease-in-out, background 300ms ease-in-out, outline 300ms ease-in-out;
-  outline: 2px solid #fff;
-  overflow: hidden;
+.formulario .formulario__foto .formulario__foto__upload {
+  height: 50%;
+  background-color: green;
   position: relative;
 }
-.formulario .uploadFoto .picture .picture__input {
+.formulario .formulario__foto .formulario__foto__upload .formulario__foto__upload__label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+.formulario .formulario__foto .formulario__foto__upload .formulario__foto__upload__label input {
   display: none;
 }
-.formulario .uploadFoto .picture .picture__image .picture__image__img {
-  max-width: 100%;
+.formulario .formulario__foto .formulario__foto__upload .formulario__foto__upload__label p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6em;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.formulario .formulario__foto .formulario__foto__tirarFoto {
+  position: relative;
+  cursor: pointer;
+  height: 50%;
+}
+.formulario .formulario__foto .formulario__foto__tirarFoto .formulario__imagem {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.6em;
+}
+.formulario .formulario__foto .formulario__foto__tirarFoto .formulario__foto__tirarFoto__camera {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.formulario .formulario__foto .formulario__foto__tirarFoto .formulario__foto__tirarFoto__camera video {
+  display: flex;
+  height: 100%;
+}
+.formulario .formulario__foto .formulario__foto__tirarFoto .formulario__foto__tirarFoto__camera .camera__botao {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  transform: translate(-50%, 0%);
+}
+.formulario .formulario__foto .formulario__foto__final {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  flex-direction: column-reverse;
+  overflow: hidden;
+}
+.formulario .formulario__foto .formulario__foto__final img {
+  width: 100%;
+}
+.formulario .formulario__foto .formulario__foto__final button {
+  position: absolute;
+  bottom: 2%;
 }
 .formulario .formulario__container_linkedin {
   display: grid;
@@ -353,6 +412,7 @@ body {
   list-style-type: none;
   -moz-column-gap: 0.5em;
        column-gap: 0.5em;
+  flex-wrap: wrap;
 }
 .formulario .formulario__container_idiomas {
   display: grid;
@@ -394,11 +454,13 @@ body {
   grid-template-rows: repeat(2, auto);
   row-gap: 0.5em;
   overflow: hidden;
+  width: 100%;
+  padding: 0 0.4em;
 }
 .formulario .formulario__container_certificacoes #certificacoes {
   grid-row: 1/2;
   grid-column: 2/3;
-  margin-left: 72%;
+  margin-left: 74%;
   width: 20px;
   height: 20px;
 }
@@ -539,6 +601,99 @@ body {
 }
 .formulario .formulario__container__formacao .lista__formacao li {
   display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .formulario {
+    display: grid;
+    background-color: orange;
+    grid-template-columns: repeat(2, 50%);
+    max-width: 768px;
+  }
+  .formulario h2 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .formulario fieldset {
+    align-self: center;
+  }
+  .formulario .nome {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .formulario .cargo {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+  .formulario .telefone {
+    grid-row: 4/5;
+    grid-column: 1/2;
+  }
+  .formulario .email {
+    grid-row: 5/6;
+    grid-column: 1/2;
+  }
+  .formulario .foto {
+    grid-column: 2/3;
+    grid-row: 2/6;
+    width: 240px;
+    height: 200px;
+  }
+  .formulario .linkedin {
+    max-width: 90%;
+  }
+  .formulario .software {
+    max-width: 90%;
+    justify-self: center;
+  }
+  .formulario .idiomas {
+    max-width: 90%;
+  }
+  .formulario .certificacoes {
+    max-width: 90%;
+    justify-self: center;
+    white-space: nowrap;
+  }
+  .formulario .descricao {
+    grid-row: 8/9;
+    grid-column: 1/3;
+  }
+  .formulario .experiencia {
+    grid-row: 9/10;
+    grid-column: 1/2;
+    height: 100%;
+  }
+  .formulario .experiencia h3 {
+    height: 50px;
+  }
+  .formulario .experiencia input {
+    height: 18px;
+  }
+  .formulario .formacao {
+    grid-row: 9/10;
+    grid-column: 2/3;
+    height: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .formulario .formacao h3 {
+    height: 50px;
+  }
+  .formulario .formacao input {
+    height: 18px;
+    margin: 0;
+  }
+  .formulario .btn__enviar {
+    grid-row: 10/11;
+    grid-column: 1/3;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 50%;
+    justify-self: center;
+    padding: 0.5em 0;
+  }
 }
 
 .banner {

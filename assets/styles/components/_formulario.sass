@@ -15,30 +15,75 @@
         text-transform: uppercase
         font-size: 1.1em
         margin-bottom: .7em
-    .uploadFoto
+    .formulario__foto
         margin: 0 auto
-        .picture
-            width: 200px
-            height: 200px
-            background-color: #ddd
-            display: block
-            aspect-ratio: 16/9
-            display: flex
-            align-items: center
-            justify-content: center
-            color: #aaa
-            border: dashed 2px
-            cursor: pointer
-            font-family: sans-serif
-            transition: color 300ms ease-in-out, background 300ms ease-in-out, outline 300ms ease-in-out
-            outline: 2px solid #fff
-            overflow: hidden
+        width: 90%
+        height: 250px
+        position: relative
+        background-color: red
+        .formulario__foto__upload
+            height: 50%
+            background-color: green
             position: relative
-            .picture__input
+            .formulario__foto__upload__label
+                width: 100%
+                height: 100%
+                cursor: pointer
+                display: block
+                input
+                    display: none
+                p
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    font-size: 1.6em
+                    display: block
+                    width: 100%
+                    text-align: center
+                    font-weight: bold
+        .formulario__foto__tirarFoto
+            position: relative
+            cursor: pointer
+            height: 50%
+            .formulario__imagem
+                position: absolute
+                left: 50%
+                top: 50%
+                transform: translate(-50%, -50%)
+                font-weight: bold
+                font-size: 1.6em
+            .formulario__foto__tirarFoto__camera
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
                 display: none
-            .picture__image
-                .picture__image__img
-                    max-width: 100%
+                video
+                    display: flex
+                    height: 100%
+                .camera__botao
+                    position: absolute
+                    left: 50%
+                    bottom: -10%
+                    transform: translate(-50%, 0%)
+        .formulario__foto__final
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            justify-content: center
+            align-items: center
+            display: none
+            flex-direction: column-reverse
+            overflow: hidden
+            img
+                width: 100%
+            button
+                position: absolute
+                bottom: 2%
     .formulario__container_linkedin
         display: grid
         border: none
@@ -83,6 +128,7 @@
             display: none
             list-style-type: none
             column-gap: .5em
+            flex-wrap: wrap
     .formulario__container_idiomas
         display: grid
         border: none
@@ -116,10 +162,12 @@
         grid-template-rows: repeat(2, auto)
         row-gap: .5em
         overflow: hidden
+        width: 100%
+        padding: 0 .4em
         #certificacoes
             grid-row: 1/2
             grid-column: 2/3
-            margin-left: 72%
+            margin-left: 74%
             width: 20px
             height: 20px
         [inputnomecursocertificacoes]
@@ -230,3 +278,76 @@
             flex-direction: column
             li
                 display: grid
+
+.formulario
+    @media screen and (min-width: 768px)
+        display: grid
+        background-color: orange
+        grid-template-columns: repeat(2, 50%)
+        max-width: 768px
+        h2
+            grid-column: 1/3
+            grid-row: 1/2
+        fieldset
+            align-self: center
+        .nome
+            grid-row: 2/3
+            grid-column: 1/2
+        .cargo
+            grid-row: 3/4
+            grid-column: 1/2
+        .telefone
+            grid-row: 4/5
+            grid-column: 1/2
+        .email
+            grid-row: 5/6
+            grid-column: 1/2
+        .foto
+            grid-column: 2/3
+            grid-row: 2/6
+            width: 240px
+            height: 200px
+        .linkedin
+            max-width: 90%
+        .software
+            max-width: 90%
+            justify-self: center
+        .idiomas
+            max-width: 90%
+        .certificacoes
+            // width: 90%
+            max-width: 90%
+            justify-self: center
+            white-space: nowrap
+        .descricao
+            grid-row: 8/9
+            grid-column: 1/3
+        .experiencia
+            grid-row: 9/10
+            grid-column: 1/2
+            height: 100%
+            h3
+                height: 50px 
+            input
+                height: 18px
+        .formacao
+            grid-row: 9/10
+            grid-column: 2/3
+            height: 100%
+            gap: 0
+            margin: 0
+            padding: 0
+            border: 0
+            h3
+                height: 50px 
+            input
+                height: 18px
+                margin: 0
+        .btn__enviar
+            grid-row: 10/11
+            grid-column: 1/3
+            font-size: 1.5em
+            font-weight: bold
+            width: 50%
+            justify-self: center
+            padding: .5em  0
